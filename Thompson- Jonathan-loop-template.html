@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loop Practice</title>
+</head>
+<body>
+    <h1 id="name">This text is replaced by the script below.</h1>
+
+    <hr>
+
+    <h2>Art3mis output:</h2>
+    <p id="art3mis"></p>
+
+    <hr>
+
+    <h2>Chessboard output:</h2>
+    <p id="chess"></p>
+    
+    
+
+
+
+    
+    <!-- This is an HTML comment. Please set the requested parameter below and leave the rest of the script alone.-->
+    <script>
+        // Set the parameter to your First and Last Name
+        setName("Jonathan Thompson")
+
+        // this function replaces the content of the "H1" element in the HTML above.
+        function setName(name){
+            // select the H1 tag by ID of "name"
+            let element = document.getElementById("name");
+            if(element) {
+                // set the text of the H1 tag
+                element.innerText = `${name}'s Loop Exercises`;
+            }
+        }
+    </script>
+
+
+
+   
+
+
+    <!-- Write your code in the script tag provided below. -->
+    <script>
+   
+   function setName(name){
+
+            let element = document.getElementById("Art3mis");
+            if(element) {
+                // set the text of the H1 tag
+                element.innerText = `${name}'s Loop Exercises`;
+            }
+        }
+        let hash = "#"
+         while (hash.length <= 7){
+            console.log(hash);
+            hash += "#";
+         }
+         let string = "n";
+         for(var i = 1; i <= 100; i++){
+              
+             console.log(i);
+             
+         }
+                    
+        // chess board
+
+        let rows = 8,
+        cols = 8;
+        while(rows >= 0){
+
+            while(cols >= 0){
+
+
+                cols--
+            }
+
+            rows --
+        }
+
+             
+
+           
+
+        
+
+
+       
+    </script>
+
+</body>
+</html>

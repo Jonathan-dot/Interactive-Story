@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My First JS Calculator</title>
+</head>
+<body>
+    <h1 id="name">This text is replaced by the script below.</h1>
+
+
+    <!-- This is an HTML comment. Please set the requested parameter below and leave the rest of the script alone.-->
+    <script>
+        // Set the parameter to your First and Last Name
+        setName("Jonathan Thompson")
+
+        // this function replaces the content of the "H1" element in the HTML above.
+        function setName(name){
+            // select the H1 tag by ID of "name"
+            let element = document.getElementById("name");
+            if(element) {
+                // set the text of the H1 tag
+                element.innerText = `${name}'s First JS Calculator`;
+            }
+        }
+    </script>
+
+
+    <!-- Write your calculator code in the script tag provided below. -->
+    <script>
+ function add(num1, num2){
+     return num1 + num2
+ }
+ function mul(num1, num2){
+     return num1 * num2
+ }
+ function sub(num1, num2){
+     return num1 - num2
+ }
+ function div(num1, num2){
+     return num1 / num2
+ }
+ 
+      
+
+        
+        var theNum = prompt("enter an operation"),
+            // n1 = Number(prompt("enter a number")),
+            // n2 = Number(prompt("enter a number"));
+            n1 = getNum()
+            n2 = getNum();
+        switch(theNum){
+
+            case "+":
+                console.log("you entered a 2")
+                alert(add(n1,n2));
+                break;
+            
+            case "*÷":
+                console.log("you entered a 2")
+                alert(mul(n1,n2));
+                break;
+            case "-":
+                console.log("you entered a 2")
+                alert(sub(n1,n2));
+                break;
+            
+            case "div":
+                console.log("you entered a 2")
+                alert(div(n1,n2));
+                break;    
+        }
+            function getNum() {
+                let val = Number (prompt("input value"));
+                if(isNaN(val)) {
+                    window.alert("Error")
+                    return getNum();
+                } else {
+                    return val
+                } 
+            }
+        
+        
+            
+            // your code here...
+
+
+                
+</script>
+   
+</body>
+</html>
