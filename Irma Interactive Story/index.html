@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h2>
+The Battle Of Irma 
+</h2>
+    
+    
+<div id="story">
+</div>
+
+<div id="buttons">
+
+</div>
+    <script>
+
+        
+        let storyContainer = document.getElementById("story");
+
+        let buttonContainer = document.getElementById("buttons");
+
+        let history = ["intro"];
+
+       const story = {
+        intro : {
+                text : "Would you like to start?",
+            choices : [
+                ["yes", "Start"],
+                ["no", "leave"]
+              ]
+           },
+           //this is the green path 
+            no : {
+                text : "Ok goodbye :-)",
+            },
+           yes : {
+                 text : "You wake up in a strange world and start to look for clues, then you see a town and start to wander towards it. ",
+            choices : [
+                ["Green1", "Look for answers"],
+                ["Blue11", "go to a pet store"],
+                ["Red111", "talk to merchant in need of help"]
+                ]
+           },
+           //red path
+           Red111 : {
+                 text : "The merchant asks for help with killing a monster in the woods that terrorizes his shop.",
+            choices : [
+                ["Green2", "decide that you don't want to kill a monster and go explore."],
+                ["Red22", "Agree to help kill the monster and ask for a weapon."] 
+              ]
+           },
+           Red22 : {
+                 text : "The shop owner gives you the choice between a chainsaw or a boomstick.",
+            choices : [
+                ["Red3", "take the chainsaw"],
+                ["Red33", "take the boomstick"] 
+              ]
+           },
+
+
+           Red33 : {
+                 text : "You go into the woods to kill the monster and succeed ",
+            choices : [
+                ["Red33D", "Return to the Merchants shop..."],
+              ]
+           },
+           Red33D : {
+                 text : "The shop keeper takes his boomstick and allows you to pick between a magic fruit or a sack of potatoe to bring along your journey.",
+            choices : [
+                ["Red4B", "take the sack of potatoes"],
+                ["Red44B", "take the magic fruit "] 
+              ]
+           },
+           Red44B : {
+                   choices : [
+                ["Red4B", "Continue"],
+              ]
+           },
+           Red44B : {
+                 text : "",
+            choices : [
+                ["Red4B", "Continue"],
+              ]
+           },
+
+
+           Red4B : {
+                 text : "After doing that quest you decide to explore the town and find a bounty poster for a witch with horse legs named Irma",
+            choices : [
+                ["Red5", "Go fight Irma with the gear you have."],
+                ["Green3", "Go check out the weapons shop"] 
+              ]
+           },
+           
+           Red5 : {
+                 text : "You find Irma in the woods and since all you have is a bunch of food you try to have a meal with that wicked witch...",
+            choices : [
+                ["Red5D", "Continue"], 
+              ]
+           },
+          Red5D : {
+                 text : "She agrees however when your back is turned she changes you into a fishstick and eats you ending your journey completly",
+            choices : [
+                ["Red111", "Restart outside of Irmas forest?"],
+                ["yes", "Replay from the start"] 
+              ]
+           },
+           Red3 : {
+                 text : "You go into the woods to kill the monster and you eventually find it.",
+            choices : [
+                ["Red4", "continue"],
+              ]
+           },
+            Red4 : {
+                 text : "When you try to rev up the chainsaw you realize that there is no gas and the monster kills you.",
+            choices : [
+                ["Red22", "Restart at merchant shop..."],
+                ["yes", "Replay form the start?"]
+              ]
+           },
+           Blue11 : {
+                 text : "You decide to check out the pet store.",
+            choices : [
+                ["Dialogue1B", "Talk to the owner"],
+              ]
+           },
+           
+           Green1 : {
+                 text : "You wander towards a police station and they tell you that you are currently in Scranton, Pennslvania",
+            choices : [
+                ["Green2", "Leave"],
+              ]
+           },
+           Green2 : {
+                 text : "You explore around town and eventually find a bounty about a witch with horse legs named Irma",
+            choices : [
+                ["Green3", "Go to the weapon shop."],
+                ["Green33", "Build your own weapon to fight Irma"]
+                
+                ]
+           },
+           
+
+          Green33 : {
+                 text : "You explore inside of the woods until you find a arrow like rock.",
+            choices : [
+                ["Green33A", "find a long branch to create a bow"],
+                ["Green33B", "find a short thick peice of wood and string to create a dagger"] 
+              ]
+           },
+          Green33A : {
+                 text : "You run into Irma's forest home and try to shoot her but you are killed instantly.",
+            choices : [
+                ["Green2", "Restart at Irma's bounty poster"],
+             ]
+           },
+          Green33B : {
+                 text : "You try to stab Irma but her claws kill you almost instantly.",
+            choices : [
+            ["Green2", "Restart at Irma's bounty poster"],
+              ]
+           },
+
+           Green3: {
+                 text : "The weapon shop owner says he will give you a sniper to defeat Irma, but you need to eliminate someone for him and offers his son to tag along with you.",
+            choices : [ 
+                ["Green4", "Go with his son and take out the target for both a sniper and a shotgun."],
+                ["Green44", "Take out a robot named CL4P-TP by yourself."] 
+                
+              ]
+           },
+          Green4 : {
+                 text : "You go with the merchants son, you find the robot and the boy pulls a pistol out on you and states...*The game was rigged from the start* <You Die>",
+                 
+            choices : [
+                ["Green3", "Restart from Weapons Shop"],
+              ]
+           },
+          Green44 : {
+                 text : "The shop-keeper gives you a Stun gun. You then look for the robot and eventually find him near his apartment and you meet up with him.",
+            choices : [
+                ["Green5", "Shoot the robot with your stun gun killing him instantly"],
+                ["Green55", "Tell the robot to leave the town and give you his antenne if he wants to live."] 
+              ]
+           },
+          Green5 : {
+                 text : "The robot is shot by the stun gun and you take his antenne as he's left dead on the floor. <You return to the shop-keeper with the robots antenne and the shop-keeper gives you the sniper he had promised you>",
+            choices : [
+                ["Dialogue1", "Continue"],
+              ]
+           },
+           Dialogue1 : {
+                 text : "You have received your reward and you decide to explore the town for more adventure...",
+            choices : [
+                ["Green6", "Go fight Irma with the gear you have."],
+                ["Green66", "Go explore more in the town to get different gear to fight Irma."] 
+              ]
+           },
+          Green66 : {
+                 text : "<You decided to check out the pet store>",
+            choices : [
+                ["Dialogue1B", "Talk to the owner"],
+              ]
+           },
+          Dialogue1B : {
+            text : "You are interested in the pets but don't know how to get them. The pet store owner says he will give you a pet if you find some food for his dogs.",
+            choices : [
+                ["Blue2", "Tell the pet store owner no and leave the store"],
+                ["Blue22", "Agree to find food and ask him where to find it"] 
+              ]
+ 
+          },
+          Blue22 : {
+                 text : "The owner says you can steal some food at a shipment nearby but it might be in the woods so he tells you to grab a weapon. You go to the weapons section of the shop and pick out a weapon.",
+            choices : [
+                ["Blue3", "A gold sword"],
+                ["Blue33", "A double barrel shotgun"] 
+              ]
+           },
+           Blue3 : {
+                 text : "<You have received a Gold Sword!>",
+            choices : [
+                ["Blue3D", "Continue"],
+              ]
+           },
+           Blue3D : {
+                 text : "You start to go towards the woods and find the shipment but then a monster hops out of the bushes.",
+            choices : [
+                ["Blue4D", "Continue"],
+              ]
+           },
+ 
+           Blue4D : {
+                 text : "You then pull out your sword and try to kill the monster. The monster kills you since you have a sword and not an awesome shotgun.",
+            choices : [
+                ["Blue22", "Restart at the weapon shop"],
+                ]
+           },
+ 
+           Blue33 : {
+                 text : "<You have received a Double Barrel Shotgun!>",
+            choices : [
+                ["Blue3DD", "Continue"],
+              ]
+           },
+           Blue3DD : {
+                 text : "You start to go towards the woods and find the shipment but then a monster hops out of the bushes.",
+            choices : [
+                ["Blue4DD2", "Continue"],
+              ]
+           },
+ 
+           Blue4DD2 : {
+                 text : "You then pull out your shotgun and kill the monster. Then proceed to grab the dog food.",
+            choices : [
+                ["Blue4DDD", "Return to the pet store..."],
+                ]
+           },
+          Blue4DDD : {
+                 text : "You give the food to the pet store owner and he lets you pick out a pet...",
+            choices : [
+                ["Blue4", "Wolf"],
+                ["Blue44", "Mountain Lion"] 
+              ]
+           },
+ 
+           Blue4 : {
+                 text : "After doing that quest you question if you are ready to battle Irma or not.",
+            choices : [
+                ["Irma1", "Go fight Irma with the gear you have"],
+                ["Blue2", "Go explore more in the town to get different gear"] 
+              ]
+           },
+           Blue44 : {
+                 text : "You see a s p o o k y forest with your pet by your side .",
+            choices : [
+                ["Irma1", "Go fight Irma with the gear you have"],
+                ["Green2", "Go explore more in the town to get different gear"] 
+              ]
+           },
+
+ 
+          Irma1 : {
+                 text : "You find Irma's house and send your pet to attack her.",
+            choices : [
+                ["IrmaDD", "Continue"],
+              ]
+           },
+           IrmaD : {
+                 text : "However she uses mind control on the animal and makes your own pet attack you...",
+            choices : [
+                ["IrmaD1", "Continue"],
+              ]
+           },
+           IrmaD1 : {
+                 text : "You flee into the woods with the animal still on your trail your fate is unknown...",
+            choices : [
+                ["IrmaD2", "Restart at pet shop..."],
+              ]
+           },
+ 
+ 
+           IrmaDD : {
+                 text : "However she uses mind control on the animal and makes it attack you...",
+            choices : [
+                ["IrmaDD1", "Continue"],
+              ]
+           },
+           IrmaDD1 : {
+                 text : "You flee into the woods with the animal still on your trail your fate is unknown...",
+            choices : [
+                ["Blue44", "Restart at pet shop..."],
+              ]
+           },
+ 
+         Blue2 : {
+                 text : "You explore around town and eventually find a bounty about a witch with horse legs named Irma",
+            choices : [
+                ["Green33", "Talk to a shop keeper in need of help"],
+                ["Green3", "look for answers..."] 
+              ]
+           }, 
+ 
+ 
+ 
+           Green6 : {
+                 text : "You arrive to Irma's home and shoot her through her window. Then she screams...",
+            choices : [
+                ["Dialogue2", "Continue"],
+              ]
+           },
+           Dialogue2 : {
+                 text : "You start to reload your sniper and shoot her in the head.",
+            choices : [
+                ["Dialogue3", "Continue"],
+              ]
+           },
+           Dialogue3: {
+                 text : "You reload one more time but before you fire she jumps up and pins you to the ground...",
+            choices : [
+                ["Dialogue4", "Continue"],
+              ]
+           },
+           Dialogue4: {
+                 text : "She claws your eyes out and shoots you with your own sniper killing you for good...",
+            choices : [
+                ["Green44", "Restart at CL4P-TP's Apartment..."],
+              ]
+           },
+          Green55 : {
+                 text : "The robot sees the stun gun in your hand, gives you his antenna and  rolls away on his singular wheel.",
+            choices : [
+                ["Green5B", "Travel back to the weapons shop..."],
+    
+              ]
+           },
+          Green5B : {
+                 text : "You return to the shop-keeper with the robots antenne and The shop-keeper gives you the sniper he had promised you.",
+            choices : [
+                ["Green6B", "Go fight Irma with the gear you have"],
+                ["Green66B", "Go explore more in the town to get different gear to fight Irma"],
+              ]
+           },
+           Green66B: {
+                 text : "You decided to explore town...",
+            choices : [
+                ["Green66", "Continue"],
+              ]
+           },
+ 
+
+
+          Green6B: {
+                 text : "You arrive to Irma's house and shoot her with the sniper.",
+            choices : [
+                ["Dialogue5", "Continue"],
+              ]
+           },
+           Dialogue5: {
+                 text : "You start to reload your sniper and aim to shoot her in the head but she jumps on you before you can fire",
+            choices : [
+                ["Green7", "Continue to experience a true nightmare..."],
+                ["Green5B", "Restart outside of Irma's forest"]
+ 
+              ]
+           },
+ 
+           Green7 : {
+                 text : "Before Irma claws your eyes out the robot you let live, CL4P-TP, jumps out of a bush and knocks her off of you...",
+            choices : [
+                ["Green77", "Grab your sniper..."],
+              ]
+           },
+           Green77 : {
+                 text : "You shoot her one more time for the final blow and you walk away with the robot...",
+            choices : [
+                ["Green8", "Exit the forest..."],
+              ]
+           },
+           Green8: {
+                 text : "But then you start to feel the ground shake as you turn around to see Irma turning into her final form...",
+            choices : [
+                ["Green88", "Continue"],
+              ]
+           },
+           Green88: {
+                 text : "Stay tuned for part 2 (Coming this December...)",
+            choices : [
+                ["yes", "would you like to replay our game?"],
+              ]
+           },
+
+       }
+
+//this makes the button and whenever you press any button it disappears
+    function makeButton(btnText, choices){
+        let button = document.createElement("button");
+    button.innerHTML = btnText;
+
+    buttonContainer.appendChild(button);
+
+    button.addEventListener ("click", function() {
+        history.push(choices);
+
+      showStory();
+      
+        
+    });
+}
+
+
+     function buildStory(text) {
+            let storyItem = document.createElement("p");
+            storyItem.innerText = text;
+            storyContainer.appendChild(storyItem);
+        }
+
+
+        function showStory(){
+            let currentPage = history[history.length - 1]; 
+            storyContainer.innerHTML = ""; 
+            buttonContainer.innerHTML = ""; 
+            console.log(history)
+           //a loop that makes the buttons pop up and function properly  
+           for(let page of history){ 
+                buildStory(story[page].text);
+            }
+            
+           for(let choices of story[currentPage].choices){ 
+                makeButton(choices[1], choices[0])
+
+            }
+        }
+        showStory();
+        
+      
+    </script>
+    
+</body>
+</html>
